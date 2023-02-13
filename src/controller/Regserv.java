@@ -34,8 +34,12 @@ public class Regserv extends HttpServlet {
 
 			if(a>0)
 			{
-				System.out.println("Data is entered");
+				out.print("Data is entered");
+				out.print("<a herf = 'show'>SHOW EMP</a>");
 			}
+		else
+			out.print("data not inserted!");
+		
 		
 		} catch (ClassNotFoundException | SQLException e1) {
 			// TODO Auto-generated catch block
