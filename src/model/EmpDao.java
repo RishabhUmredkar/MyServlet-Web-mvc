@@ -55,6 +55,17 @@ public class EmpDao {
 		
 		return le;
 	}
+
+
+	public int delete(int id) throws ClassNotFoundException, SQLException {
+		Connection con = getConnect();
+		PreparedStatement ps = con.prepareStatement("delete from emp22 where id = ?");
+		ps.setInt(1,id);
+		
+		int a = ps.executeUpdate();
+		con.close();
+		return a;
+	}
 	
 	
 	
