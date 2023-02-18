@@ -66,6 +66,22 @@ public class EmpDao {
 		con.close();
 		return a;
 	}
+
+
+	public int update(Emp e) throws ClassNotFoundException, SQLException {
+		Connection con = getConnect();
+		PreparedStatement ps = con.prepareStatement("update  emp22 set fname = ?, Address =? where Id = ?");
+		ps.setString(1, e.getFname());
+		ps.setString(2, e.getAddress());
+		ps.setInt(3, e.getId());
+
+		
+		int a = ps.executeUpdate();
+		con.close();
+		
+		return a;
+
+	}
 	
 	
 	
