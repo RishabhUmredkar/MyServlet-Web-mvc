@@ -82,6 +82,12 @@ public class EmpDao {
 		return a;
 
 	}
+
+
+	public Emp getOneEmp(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	
