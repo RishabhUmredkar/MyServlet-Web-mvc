@@ -28,6 +28,14 @@ public class ShowServ extends HttpServlet {
 		out.print("  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script>");
 		out.print("  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>");
 
+		//search start
+				out.print("<form action='search' >");
+				out.print("<input type='text' name='city' placeholder='Enter City' >");
+				out.print("<input type='submit' value='Search'>");
+				out.print("</form>");
+				//search endSS
+				
+		
 try {
 			
 			
