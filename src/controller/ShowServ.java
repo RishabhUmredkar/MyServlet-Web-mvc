@@ -37,7 +37,7 @@ try {
 			for(Emp e:le)
 			{
 			out.print("<tr><td>"+e.getId()+"</td><td>"+e.getFname()+"</td><td> "+e.getAddress()+
-					"</td><td><a href='edit' class='btn btn-primary'>Edit</a> <a href='delete?id="+e.getId()+"' class='btn btn-danger'>Delete</a></td></tr>");
+					"</td><td><a href='edit?id="+e.getId()+"' class='btn btn-primary'>Edit</a><a href='delete?id="+e.getId()+"' class='btn btn-danger'>Delete</a></td></tr>");
 			}
 			
 			out.print("</table>");

@@ -84,9 +84,20 @@ public class EmpDao {
 	}
 
 
-	public Emp getOneEmp(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Emp getOneEmp(int id) throws SQLException, ClassNotFoundException {
+
+		Connection con = getConnect();
+		PreparedStatement st = con.prepareStatement("select * from emp22 where id= ?");
+		st.setInt(1, id);
+		
+		ResultSet rs = st.executeQuery();
+		Emp e = null;
+		while(rs.next())
+		{
+			e = new Emp(rs.getInt(1), rs.getString(2), rs.getString(3));
+		}
+		return e;
+
 	}
 	
 	

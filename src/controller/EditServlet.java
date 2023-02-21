@@ -24,22 +24,29 @@ public class EditServlet extends HttpServlet {
 		
 		int id=Integer.parseInt(request.getParameter("id"));
 	    
-		Emp e=new EmpDao().getOneEmp(id);
-		if(e!=null)
-		{
-			out.print("<form action='update'>");
-			out.print("<input type='text' name='id' value='"+e.getId()+"'readonly='readonly'>");
-			out.print("<input type='text' name='fname' value='"+e.getFname()+"'>");
-			out.print("<input type='text' name='address' value='"+e.getAddress()+"'>");
-			out.print("<input type='submit' value='Update'>");
-			out.print("</form>");
+		 
+		try {
+			Emp	e = new EmpDao().getOneEmp(id);
+			if(e!=null)
+			{
+				out.print("<form action='update'>");
+				out.print("<input type='text' name='id' value='"+e.getId()+"'readonly='readonly'>");
+				out.print("<input type='text' name='fname' value='"+e.getFname()+"'>");
+				out.print("<input type='text' name='address' value='"+e.getAddress()+"'>");
+				out.print("<input type='submit' value='Update'>");
+				out.print("</form>");
 
+			}
+			else
+			{
+				out.print("id is not in database");
+			}
+		
+		} catch (ClassNotFoundException | SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
-		else
-		{
-			out.print("id is not in database");
-		}
-	
+		
 	
 	}
 
